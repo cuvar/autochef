@@ -11,7 +11,7 @@ type Unit struct {
 }
 
 func NewUnit(value string) (*Unit, error) {
-	striped := strings.Replace(value, " ", "", -1)
+	striped := strings.TrimSpace(value)
 	if len(striped) == 0 {
 		return nil, errors.New("Unit must not be empty")
 	}

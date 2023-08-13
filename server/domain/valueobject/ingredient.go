@@ -11,7 +11,7 @@ type Ingredient struct {
 }
 
 func NewIngredient(name string) (*Ingredient, error) {
-	striped := strings.Replace(name, " ", "", -1)
+	striped := strings.TrimSpace(name)
 	if len(striped) == 0 {
 		return nil, errors.New("Ingredient name must not be empty")
 	}
