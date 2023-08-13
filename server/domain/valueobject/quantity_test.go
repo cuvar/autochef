@@ -97,7 +97,7 @@ func TestQuantityEqualsNegative(t *testing.T) {
 	assert.False(t, equals)
 }
 
-func TestQuantityToString(t *testing.T) {
+func TestQuantityToStringInt(t *testing.T) {
 	// arrange
 	value := 1.0
 	q, _ := NewQuantity(value)
@@ -106,5 +106,17 @@ func TestQuantityToString(t *testing.T) {
 	s := q.ToString()
 
 	// assert
-	assert.Equal(t, "1.000000", s)
+	assert.Equal(t, "1", s)
+}
+
+func TestQuantityToStringFloat(t *testing.T) {
+	// arrange
+	value := 2.5
+	q, _ := NewQuantity(value)
+
+	// act
+	s := q.ToString()
+
+	// assert
+	assert.Equal(t, "2.50", s)
 }
