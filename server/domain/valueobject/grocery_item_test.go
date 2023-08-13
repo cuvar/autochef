@@ -142,3 +142,18 @@ func TestGroceryItemEqualsNegativeUnit(t *testing.T) {
 	// assert
 	assert.Equal(t, result, false)
 }
+
+func TestGroceryItemToString(t *testing.T) {
+	// arrange
+	ingredient, _ := NewIngredient("potatoes")
+	quantity, _ := NewQuantity(1)
+	unit, _ := NewUnit("kg")
+	groceryItem := NewGroceryItem(*ingredient, *quantity, *unit)
+
+	// act
+	result := groceryItem.ToString()
+
+	// assert
+	assert.NotNil(t, result)
+	assert.Equal(t, result, "1 kg potatoes")
+}
