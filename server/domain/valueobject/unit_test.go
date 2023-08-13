@@ -12,8 +12,8 @@ func TestUnitCreationPositive(t *testing.T) {
 
 	// act
 	q, err := NewUnit(value)
-	
-	// assert 
+
+	// assert
 	assert.NotNil(t, q)
 	assert.Nil(t, err)
 }
@@ -24,12 +24,11 @@ func TestUnitCreationNegative(t *testing.T) {
 
 	// act
 	q, err := NewUnit(value)
-	
-	// assert 
+
+	// assert
 	assert.Nil(t, q)
 	assert.EqualError(t, err, "Unit must not be empty")
 }
-
 
 func TestUnitValue(t *testing.T) {
 	// arrange
@@ -38,8 +37,8 @@ func TestUnitValue(t *testing.T) {
 
 	// act
 	amount := q.Value()
-	
-	// assert 
+
+	// assert
 	assert.Equal(t, value, amount)
 }
 
@@ -50,8 +49,8 @@ func TestUnitId(t *testing.T) {
 
 	// act
 	id := q.Id()
-	
-	// assert 
+
+	// assert
 	assert.Equal(t, "kg", id)
 }
 
@@ -63,8 +62,8 @@ func TestUnitEqualsPositive(t *testing.T) {
 
 	// act
 	equals := q.Equals(q2)
-	
-	// assert 
+
+	// assert
 	assert.True(t, equals)
 }
 
@@ -76,8 +75,8 @@ func TestUnitEqualsNegative(t *testing.T) {
 
 	// act
 	equals := q.Equals(q2)
-	
-	// assert 
+
+	// assert
 	assert.False(t, equals)
 }
 
@@ -88,7 +87,7 @@ func TestUnitToString(t *testing.T) {
 
 	// act
 	s := q.ToString()
-	
-	// assert 
+
+	// assert
 	assert.Equal(t, "kg", s)
 }

@@ -7,7 +7,7 @@ import (
 )
 
 type Unit struct {
-	value    string
+	value string
 }
 
 func NewUnit(value string) (*Unit, error) {
@@ -33,6 +33,6 @@ func (u *Unit) Equals(other *Unit) bool {
 }
 
 func (u *Unit) ToString() string {
-	s := fmt.Sprintf("%s", u.value);
-	return s;
+	s := fmt.Sprintf("%s", u.value)
+	return s
 }

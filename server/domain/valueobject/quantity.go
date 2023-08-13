@@ -6,7 +6,7 @@ import (
 )
 
 type Quantity struct {
-	amount    float64
+	amount float64
 }
 
 func NewQuantity(amount float64) (*Quantity, error) {
@@ -14,7 +14,7 @@ func NewQuantity(amount float64) (*Quantity, error) {
 		return nil, errors.New("Amount must be positive")
 	}
 	return &Quantity{
-		amount:    amount,
+		amount: amount,
 	}, nil
 }
 
@@ -38,6 +38,6 @@ func (q *Quantity) Equals(other *Quantity) bool {
 }
 
 func (q *Quantity) ToString() string {
-	s := fmt.Sprintf("%f", q.amount);
-	return s;
+	s := fmt.Sprintf("%f", q.amount)
+	return s
 }

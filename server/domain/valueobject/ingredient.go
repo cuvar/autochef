@@ -7,7 +7,7 @@ import (
 )
 
 type Ingredient struct {
-	name    string
+	name string
 }
 
 func NewIngredient(name string) (*Ingredient, error) {
@@ -33,6 +33,6 @@ func (i *Ingredient) Equals(other *Ingredient) bool {
 }
 
 func (i *Ingredient) ToString() string {
-	s := fmt.Sprintf("%s", i.name);
-	return s;
+	s := fmt.Sprintf("%s", i.name)
+	return s
 }

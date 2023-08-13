@@ -12,8 +12,8 @@ func TestQuantityCreationPositive(t *testing.T) {
 
 	// act
 	q, err := NewQuantity(value)
-	
-	// assert 
+
+	// assert
 	assert.NotNil(t, q)
 	assert.Nil(t, err)
 }
@@ -24,8 +24,8 @@ func TestQuantityCreationNegative(t *testing.T) {
 
 	// act
 	q, err := NewQuantity(value)
-	
-	// assert 
+
+	// assert
 	assert.Nil(t, q)
 	assert.EqualError(t, err, "Amount must be positive")
 }
@@ -37,8 +37,8 @@ func TestQuantityAmount(t *testing.T) {
 
 	// act
 	amount := q.Amount()
-	
-	// assert 
+
+	// assert
 	assert.Equal(t, value, amount)
 }
 
@@ -50,11 +50,11 @@ func TestQuantityMultiplyPositive(t *testing.T) {
 
 	// act
 	q2, err := q.Multiply(factor)
-	
-	// assert 
+
+	// assert
 	assert.NotNil(t, q2)
 	assert.Nil(t, err)
-	assert.Equal(t, value * factor, q2.Amount())
+	assert.Equal(t, value*factor, q2.Amount())
 }
 
 func TestQuantityMultiplyNegative(t *testing.T) {
@@ -65,8 +65,8 @@ func TestQuantityMultiplyNegative(t *testing.T) {
 
 	// act
 	q2, err := q.Multiply(factor)
-	
-	// assert 
+
+	// assert
 	assert.Nil(t, q2)
 	assert.EqualError(t, err, "Factor must be positive")
 }
@@ -79,8 +79,8 @@ func TestQuantityEqualsPositive(t *testing.T) {
 
 	// act
 	equals := q.Equals(q2)
-	
-	// assert 
+
+	// assert
 	assert.True(t, equals)
 }
 
@@ -92,8 +92,8 @@ func TestQuantityEqualsNegative(t *testing.T) {
 
 	// act
 	equals := q.Equals(q2)
-	
-	// assert 
+
+	// assert
 	assert.False(t, equals)
 }
 
@@ -104,7 +104,7 @@ func TestQuantityToString(t *testing.T) {
 
 	// act
 	s := q.ToString()
-	
-	// assert 
+
+	// assert
 	assert.Equal(t, "1.000000", s)
 }
